@@ -3,13 +3,13 @@ import sys
 import warnings
 from typing import Optional, Iterable
 
+import networkx as nx
 import numpy as np
 import scipy
 from numpy import matlib
 from sklearn.neighbors import NearestNeighbors
 from numpy import linalg
 from scipy.sparse.csgraph import dijkstra
-import networkx as nx
 
 
 def wishbone(
@@ -18,7 +18,7 @@ def wishbone(
     k: int = 15,
     l: int = 15,
     num_graphs: int = 1,
-    num_waypoints: Optional[int, Iterable] = 250,
+    num_waypoints: Optional[Iterable[int]] = 250,
     verbose: bool = True,
     metric: str = "euclidean",
     voting_scheme: str = "exponential",
@@ -26,6 +26,7 @@ def wishbone(
     flock_waypoints: int = 2,
     band_sample: bool = False,
     partial_order: list = [],
+    search_connected_components: bool = True,
 ):
 
     if verbose:
@@ -47,7 +48,7 @@ def wishbone(
     # generate klNN graphs and iteratively refine a trajectory in each
     for graph_iter in range(num_graphs):
         if k != l:
-            klnn = _spdists_klnn(lnn, k)
+            klnn = _spdists_klnn(lnn, k, verbose)
         else:
             klnn = lnn
 
@@ -78,7 +79,7 @@ def wishbone(
             RNK, bp, diffdists, Y = _splittobranches(
                 traj, traj[0], data, iter_l, dist, paths_l2l
             )
-            W = _muteCrossBranchVoting(W_full, RNK, RNK[s], iter_l)
+            W = _muteCrossBranchVoting(W_full, RNK, RNK[s], iter_l, Y)
         else:
             W = W_full
 
@@ -104,7 +105,7 @@ def wishbone(
                 RNK, bp, diffdists, Y = _splittobranches(
                     traj, traj[0], data, iter_l, dist, paths_l2l
                 )
-                W = _muteCrossBranchVoting(W_full, RNK, RNK[s], iter_l)
+                W = _muteCrossBranchVoting(W_full, RNK, RNK[s], iter_l, Y)
             # calculate weighed trajectory
             t.append(np.sum(np.multiply(traj, W), axis=0))
 
@@ -159,7 +160,7 @@ def wishbone(
 
 # All the utility functions
 # randomly removing l-k edges for each iteration of graph_num
-def _spdists_klnn(spdists, k):
+def _spdists_klnn(spdists, k, verbose):
 
     # TODO - avoid converting back to non-sparse
     if scipy.sparse.issparse(spdists):
@@ -490,7 +491,7 @@ def _splittobranches(trajs, t, data, landmarks, dist, paths_l2l):
     return RNK, pb, diffdists, Y
 
 
-def _muteCrossBranchVoting(W, RNK, landmarks, Y):
+def _muteCrossBranchVoting(W, RNK, trunk_id, landmarks, Y):
     # range between -1 and 1
     Y_scale = np.subtract(Y, np.median(Y[landmarks]))
     indices = np.where(Y_scale < 0)[0]

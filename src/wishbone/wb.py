@@ -16,12 +16,18 @@ import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-import phenograph
 import scipy
 import sklearn
 from numpy.core.umath_tests import inner1d
 
 from .core import wishbone as c_wishbone
+
+try:
+    import phenograph
+except ImportError:
+    raise ImportError(
+        "\nplease install Phenograph:\n\n\thttps://github.com/dpeerlab/PhenoGraph"
+    )
 
 # set plotting defaults
 with warnings.catch_warnings():
@@ -260,7 +266,7 @@ class SCData(object):
         self._cluster_assignments = item
 
     @classmethod
-    def from_csv(cls, counts_csv_file, data_type, cell_axis=0):
+    def from_csv(cls, counts_csv_file, data_type, cell_axis=0, normalize=True):
         if not data_type in ["sc-seq", "masscyt"]:
             raise RuntimeError("data_type must be either sc-seq or masscyt")
 
@@ -1151,7 +1157,6 @@ class SCData(object):
         :return:
             fig, axes
         """
-
         not_in_dataframe = set(genes).difference(self.data.columns)
         if not_in_dataframe:
             if len(not_in_dataframe) < len(genes):
