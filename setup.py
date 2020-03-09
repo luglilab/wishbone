@@ -14,7 +14,7 @@ with open("README.md", "r") as fh:
 
 
 setup(
-    name="wishbone",
+    name="wishbone_dev",
     version=__version__,
     description=(
         "Wishbone algorithm for identifying bifurcating trajectories from "

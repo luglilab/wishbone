@@ -7,7 +7,7 @@ with multidimensional single cell data from diverse technologies such as Mass cy
 #### Installation and dependencies
 1. Wishbone has been implemented in Python3 and can be installed using
 
-        $> pip install wishbone
+        $> pip install wishbone_dev
 
 2. Wishbone depends on a number of `python3` packages available on pypi and these dependencies are listed in `setup.py`
 All the dependencies will be automatically installed using the above commands
