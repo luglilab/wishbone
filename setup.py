@@ -6,7 +6,7 @@ from setuptools import setup
 if sys.version_info.major != 3:
     raise RuntimeError("Wishbone requires Python 3")
 
-with open("wishbone/version.py") as f:
+with open("src/wishbone/version.py") as f:
     exec(f.read())
 
 with open("README.md", "r") as fh:
