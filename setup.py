@@ -1,19 +1,28 @@
 import os
 import sys
 import shutil
-from subprocess import call
 from setuptools import setup
-from warnings import warn
 
 if sys.version_info.major != 3:
     raise RuntimeError("Wishbone requires Python 3")
 
+with open("wishbone/version.py") as f:
+    exec(f.read())
+
+with open("README.md", "r") as fh:
+    long_description = fh.read()
+
 
 setup(
     name="wishbone",
-    version="0.4.2",
-    description="Wishbone algorithm for identifying bifurcating trajectories from single-cell data",
-    author="Manu Setty",
+    version=__version__,
+    description=(
+        "Wishbone algorithm for identifying bifurcating trajectories from "
+        "single-cell data"
+    ),
+    long_description=long_description,
+    long_description_content_type="text/markdown",
+    author=__author__,
     author_email="manu.talanki@gmail.com",
     package_dir={"": "src"},
     packages=["wishbone"],
@@ -31,6 +40,16 @@ setup(
         "statsmodels>=0.8.0",
     ],
     scripts=["src/wishbone/wishbone_gui.py"],
+    classifiers=[
+        "Programming Language :: Python :: 3",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
+        "Operating System :: POSIX :: Linux",
+        "Development Status :: 5 - Production/Stable",
+        "Topic :: Scientific/Engineering :: Bio-Informatics",
+        "Topic :: Scientific/Engineering :: Visualization",
+    ],
+    python_requires=">=3.6",
 )
 
 # get location of setup.py
