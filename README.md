@@ -31,7 +31,7 @@ A tutorial on using the interface is available in the [Wishbone tutorial](docs/w
 
 #### Citation
 
-Wishbone manuscript is available from [Nature Biotechnology](http://www.nature.com/nbt/journal/vaop/ncurrent/full/nbt.3569.html). If you use Wishbone for your work, please cite our paper.
+Wishbone manuscript is available from [Nature Biotechnology](https://www.nature.com/articles/nbt.3569). If you use Wishbone for your work, please cite our paper.
 
         @article{Wishbone_2016,
                 title = {Wishbone identifies bifurcating developmental trajectories from single-cell data},
@@ -43,3 +43,10 @@ Wishbone manuscript is available from [Nature Biotechnology](http://www.nature.c
                 doi = {doi:10.1038/nbt.3569}
         }
                 
+#### Data availability
+FCS files for the mouse thymus data can be downloaded from the following links 
+[Thymus, Panel 1- Replicate 1](https://dp-lab-data-public.s3.amazonaws.com/wishbone/wishbone_thymus_panel1_rep1.fcs)
+[Thymus, Panel 1- Replicate 2](https://dp-lab-data-public.s3.amazonaws.com/wishbone/wishbone_thymus_panel1_rep2.fcs)
+[Thymus, Panel 1- Replicate 3](https://dp-lab-data-public.s3.amazonaws.com/wishbone/wishbone_thymus_panel1_rep3.fcs)
+[Thymus, Panel 2- Replicate 1](https://dp-lab-data-public.s3.amazonaws.com/wishbone/wishbone_thymus_panel2_rep1.fcs)
+[Thymus, Panel 2- Replicate 1](https://dp-lab-data-public.s3.amazonaws.com/wishbone/wishbone_thymus_panel2_rep2.fcs)
