@@ -45,8 +45,8 @@ Wishbone manuscript is available from [Nature Biotechnology](https://www.nature.
                 
 #### Data availability
 FCS files for the mouse thymus data can be downloaded from the following links 
-[Thymus, Panel 1- Replicate 1](https://dp-lab-data-public.s3.amazonaws.com/wishbone/wishbone_thymus_panel1_rep1.fcs)
-[Thymus, Panel 1- Replicate 2](https://dp-lab-data-public.s3.amazonaws.com/wishbone/wishbone_thymus_panel1_rep2.fcs)
-[Thymus, Panel 1- Replicate 3](https://dp-lab-data-public.s3.amazonaws.com/wishbone/wishbone_thymus_panel1_rep3.fcs)
-[Thymus, Panel 2- Replicate 1](https://dp-lab-data-public.s3.amazonaws.com/wishbone/wishbone_thymus_panel2_rep1.fcs)
-[Thymus, Panel 2- Replicate 1](https://dp-lab-data-public.s3.amazonaws.com/wishbone/wishbone_thymus_panel2_rep2.fcs)
+* [Thymus, Panel 1- Replicate 1](https://dp-lab-data-public.s3.amazonaws.com/wishbone/wishbone_thymus_panel1_rep1.fcs)
+* [Thymus, Panel 1- Replicate 2](https://dp-lab-data-public.s3.amazonaws.com/wishbone/wishbone_thymus_panel1_rep2.fcs)
+* [Thymus, Panel 1- Replicate 3](https://dp-lab-data-public.s3.amazonaws.com/wishbone/wishbone_thymus_panel1_rep3.fcs)
+* [Thymus, Panel 2- Replicate 1](https://dp-lab-data-public.s3.amazonaws.com/wishbone/wishbone_thymus_panel2_rep1.fcs)
+* [Thymus, Panel 2- Replicate 1](https://dp-lab-data-public.s3.amazonaws.com/wishbone/wishbone_thymus_panel2_rep2.fcs)
