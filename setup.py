@@ -27,17 +27,17 @@ setup(
     package_dir={"": "src"},
     packages=["wishbone"],
     install_requires=[
-        "numpy>=1.12.0",
-        "pandas>=0.19.2",
-        "scipy>=0.18.1",
-        "Cython",
+        "numpy>=1.26.4",
+        "pandas>=2.0.3",
+        "scipy>=1.11.4",
+        "cython",
         "bhtsne",
-        "matplotlib>=2.0.0",
-        "seaborn>=0.7.1",
-        "sklearn",
-        "networkx>=1.11",
-        "fcsparser>=0.1.2",
-        "statsmodels>=0.8.0",
+        "matplotlib>=3.9.1",
+        "seaborn>=0.13.2",
+        "scikit-learn",
+        "networkx>=3.3",
+        "fcsparser>=0.2.8",
+        "statsmodels>=0.14.2",
     ],
     scripts=["src/wishbone/wishbone_gui.py"],
     classifiers=[
@@ -49,7 +49,7 @@ setup(
         "Topic :: Scientific/Engineering :: Bio-Informatics",
         "Topic :: Scientific/Engineering :: Visualization",
     ],
-    python_requires=">=3.6",
+    python_requires=">=3.11",
 )
 
 # get location of setup.py

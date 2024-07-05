@@ -1,0 +1,11 @@
+numpy>=1.26.4
+pandas>=2.0.3
+scipy>=1.11.4
+cython
+bhtsne
+matplotlib>=3.9.1
+seaborn>=0.13.2
+scikit-learn
+networkx>=3.3
+fcsparser>=0.2.8
+statsmodels>=0.14.2
