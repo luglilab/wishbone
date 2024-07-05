@@ -26,7 +26,7 @@ A python GUI is now available for Wishbone. After following the installation ste
 
         $> wishbone_gui.py
 
-A tutorial on using the interface is available in the [Wishbone tutorial](docs/wishbone_tutorial.pptx).
+
 
 
 #### Citation
